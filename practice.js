@@ -1,50 +1,52 @@
-
-var input = document.getElementsByClassName('text-box')[0].value;
-document.getElementById('click-me').addEventListener('click', function(event){
-      if(input === 30){
-        console.log('you did it');
-        // document.getElementsByClassName('above30')[0].style['color']= 'red';
-        // document.getElementsByClassName('between10and20')[0].style['display']='none';
-        // document.getElementsByClassName('between10and0')[0].style['display']='none';
-        // document.getElementsByClassName('between0andneg20')[0].style['display']='none';
-        // document.getElementsByClassName('below20')[0].style['display']='none';
+var input = document.getElementsByClassName('text-box')[0];
+document.getElementById('click-me').addEventListener('click', function(){
+      if(input.value >= '30'){
+        document.getElementsByClassName('above30')[0].style.color= 'red';
+        document.getElementsByClassName('between20and30')[0].style.display= 'none';
+        document.getElementsByClassName('between10and20')[0].style.display='none';
+        document.getElementsByClassName('between10and0')[0].style.display='none';
+        document.getElementsByClassName('between0andneg20')[0].style.display='none';
+        document.getElementsByClassName('below20')[0].style.display='none';
        }
-      // else if (input >= 10 && input <= 20){
-      //   document.getElementsByClassName('above30').style.display= 'none';
-      //   document.getElementsByClassName('between10and20')[0].style.color= 'red';
-      //   document.getElementsByClassName('between10and0')[0].style.display='none';
-      //   document.getElementsByClassName('between0andneg20')[0].style.display='none';
-      //   document.getElementsByClassName('below20')[0].style.display='none';
-      //  }
-      // else if(input < 10 && input >= 0){
-      //   document.getElementsByClassName('above30').style.display= 'none';
-      //   document.getElementsByClassName('between10and20')[0].style.display= 'none';
-      //   document.getElementsByClassName('between10and0')[0].style.color='red';
-      //   document.getElementsByClassName('between0andneg20')[0].style.display='none';
-      //   document.getElementsByClassName('below20')[0].style.display='none';
-      //  }
-      //  else if(input < 0 && input > -20){
+       else if (input.value >= '19' && input.value <= '29'){
+         document.getElementsByClassName('above30')[0].style.display= 'none';
+         document.getElementsByClassName('between20and30')[0].style.color= 'red';
+         document.getElementsByClassName('between10and20')[0].style.display= 'none';
+         document.getElementsByClassName('between10and0')[0].style.display='none';
+         document.getElementsByClassName('between0andneg20')[0].style.display='none';
+         document.getElementsByClassName('below20')[0].style.display='none';
+        }
+      else if (input.value >= '10' && input.value <= '20'){
+        document.getElementsByClassName('above30')[0].style.display= 'none';
+        document.getElementsByClassName('between20and30')[0].style.display= 'none';
+        document.getElementsByClassName('between10and20')[0].style.color= 'red';
+        document.getElementsByClassName('between10and0')[0].style.display='none';
+        document.getElementsByClassName('between0andneg20')[0].style.display='none';
+        document.getElementsByClassName('below20')[0].style.display='none';
+       }
+      else if(input.value < '9' && input.value >= '0'){
+        document.getElementsByClassName('above30')[0].style.display= 'none';
+        document.getElementsByClassName('between20and30')[0].style.display= 'none';
+        document.getElementsByClassName('between10and20')[0].style.display= 'none';
+        document.getElementsByClassName('between10and0')[0].style.color='red';
+        document.getElementsByClassName('between0andneg20')[0].style.display='none';
+        document.getElementsByClassName('below20')[0].style.display='none';
+       }
+      //  else if(input.value <= '-1' && input.value >= '-20'){
       //    document.getElementsByClassName('above30').style.display= 'none';
       //    document.getElementsByClassName('between10and20')[0].style.display= 'none';
       //    document.getElementsByClassName('between10and0')[0].style.display='none';
       //    document.getElementsByClassName('between0andneg20')[0].style.color='red';
       //    document.getElementsByClassName('below20')[0].style.display='none';
       //   }
-      //   else if(input <=-20){
+      //   else if(input.value <='-21'){
       //     document.getElementsByClassName('above30').style.display= 'none';
       //     document.getElementsByClassName('between10and20')[0].style.display= 'none';
       //     document.getElementsByClassName('between10and0')[0].style.display='none';
       //     document.getElementsByClassName('between0andneg20')[0].style.display='none';
       //     document.getElementsByClassName('below20')[0].style.color='red';
       //    }
-         else {
-        console.log('this did not work');
-        //    document.getElementsByClassName('above30').style.display= 'none';
-        //    document.getElementsByClassName('between10and20').style.display= 'none';
-        //    document.getElementsByClassName('between10and0').style.display='none';
-        //    document.getElementsByClassName('between0andneg20').style.display='none';
-        //    document.getElementsByClassName('below20').style.display='none';
-         }
+
 
 });
 
