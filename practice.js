@@ -1,6 +1,29 @@
 // zipcodeAPI key
 // js-Q7YvTzD1xCqPIsNTh4QTV4lKHk8NHoyxww3p6HqDjRt2jgVBlLvhQQ2xaalSyUq4
 
+//flickr API key
+// 4ecdea272c9fed692c944e941da9ed73
+
+
+
+var above30 = document.getElementsByClassName('above30')[0];
+above30.style.display = 'none';
+
+var between20and30 = document.getElementsByClassName('between20and30')[0];
+between20and30.style.display = 'none';
+
+var between10and20 = document.getElementsByClassName('between10and20')[0];
+between10and20.style.display = 'none';
+
+var between0and10 = document.getElementsByClassName('between0and10')[0];
+between0and10.style.display = 'none';
+
+var between0andneg20 = document.getElementsByClassName('between0andneg20')[0];
+between0andneg20.style.display = 'none';
+
+var below20 = document.getElementsByClassName('below20')[0];
+below20.style.display = 'none';
+
 
 var cityInput = document.querySelector('#cityInput');
 var stateInput = document.querySelector('#stateInput');
@@ -28,12 +51,49 @@ button.addEventListener('click', function(event){
     success: function(data) {
       var weatherData = JSON.stringify(data);
       var weatherObject = JSON.parse(weatherData);
-      console.log(weatherObject.main.temp);
-      console.log(weatherObject.weather[0].description);
+      //convert temperature to Fahrenheit
+      var kelvin = weatherObject.main.temp;
+      function roundTemperature(kelvin){
+      kelvin = kelvin.toFixed(1);
+      return kelvin;
+    }
+      var far = (kelvin - 273.25) * 1.800 + 32.00
+      if(far >= 30){
+        above30.style.display = 'block';
+       }
+      else if (far >= 20 && far <= 29){
+         between20and30.style.display = 'block';
+      }
+      else if(far >= 10 && far <= 19){
+          between10and20.style.display = 'block';
+       }
+      else if(far >= 0 && far <= 9){
+        between0and10.style.display = 'block';
+       }
+       else if(far <= -1 && far >= -20){
+         between0andneg20.style.display = 'block';
+        }
+        else if(far <=-21){
+          below20.style.display = 'block';
+         }
     },
   });
-   // display clothing recommendations based on temperature
+});
 
+
+// change background picture based on weather
+$.ajax({
+  url: 'https://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=4ecdea272c9fed692c944e941da9ed73&user_id=137982621@N05&format=json',
+  method: "GET",
+  success: function(data) {
+    console.log(data);
+    var headerImg = document.getElementsByClassName('.headerImg');
+    headerImg.style.display=data;
+  },
+  error: function(errorObject, textStatus) {
+      console.log(errorObject);
+      console.log(textStatus);
+  }
 });
 
 
@@ -63,88 +123,4 @@ button.addEventListener('click', function(event){
 
 
 
-
-
-
-
-// var input = document.getElementsByClassName('text-box')[0];
-// document.getElementById('click-me').addEventListener('click', function(){
-//       if(input.value >= 30){
-//         document.getElementsByClassName('above30')[0].style.color= 'red';
-//         document.getElementsByClassName('between20and30')[0].style.display= 'none';
-//         document.getElementsByClassName('between10and20')[0].style.display='none';
-//         document.getElementsByClassName('between10and0')[0].style.display='none';
-//         document.getElementsByClassName('between0andneg20')[0].style.display='none';
-//         document.getElementsByClassName('below20')[0].style.display='none';
-//        }
-//        else if (input.value >= 20 && input.value <= 29){
-//          document.getElementsByClassName('above30')[0].style.display= 'none';
-//          document.getElementsByClassName('between20and30')[0].style.color= 'red';
-//          document.getElementsByClassName('between10and20')[0].style.display= 'none';
-//          document.getElementsByClassName('between10and0')[0].style.display='none';
-//          document.getElementsByClassName('between0andneg20')[0].style.display='none';
-//          document.getElementsByClassName('below20')[0].style.display='none';
-//         }
-//       else if (input.value >= 10 && input.value <= 19){
-//         document.getElementsByClassName('above30')[0].style.display= 'none';
-//         document.getElementsByClassName('between20and30')[0].style.display= 'none';
-//         document.getElementsByClassName('between10and20')[0].style.color= 'red';
-//         document.getElementsByClassName('between10and0')[0].style.display='none';
-//         document.getElementsByClassName('between0andneg20')[0].style.display='none';
-//         document.getElementsByClassName('below20')[0].style.display='none';
-//        }
-//       else if(input.value >= 0 && input.value <= 9){
-//         document.getElementsByClassName('above30')[0].style.display= 'none';
-//         document.getElementsByClassName('between20and30')[0].style.display= 'none';
-//         document.getElementsByClassName('between10and20')[0].style.display= 'none';
-//         document.getElementsByClassName('between10and0')[0].style.color='red';
-//         document.getElementsByClassName('between0andneg20')[0].style.display='none';
-//         document.getElementsByClassName('below20')[0].style.display='none';
-//        }
-//        else if(input.value <= -1 && input.value >= -20){
-//          document.getElementsByClassName('above30').style.display= 'none';
-//          document.getElementsByClassName('between20and30')[0].style.display= 'none';
-//          document.getElementsByClassName('between10and20')[0].style.display= 'none';
-//          document.getElementsByClassName('between10and0')[0].style.display='none';
-//          document.getElementsByClassName('between0andneg20')[0].style.color='red';
-//          document.getElementsByClassName('below20')[0].style.display='none';
-//         }
-      //   else if(input.value <='-21'){
-      //     document.getElementsByClassName('above30').style.display= 'none';
-      //     document.getElementsByClassName('between20and30')[0].style.display= 'none';
-      //     document.getElementsByClassName('between10and20')[0].style.display= 'none';
-      //     document.getElementsByClassName('between10and0')[0].style.display='none';
-      //     document.getElementsByClassName('between0andneg20')[0].style.display='none';
-      //     document.getElementsByClassName('below20')[0].style.color='red';
-      //    }
-// });
-
-
-
-
-
-// var input = document.getElementsByClassName('text-box').value;
-//
-// function entry(input){
-//     if(typeof input === "string") {
-//             window.alert("Please input a real number");
-//           }
-//     else {
-//           if (input>=30){
-//             window.alert("2 tops, 1 bottom. long sleeve + vest + tights");
-//           else if (input >= 10 && input <= 20){
-//             window.alert("2 tops, 2 bottoms. base layer + jacket + tights + pants");
-//             }
-//           else if (input < 10 && input >= 0) {
-//             window.alert("3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants");
-//             }
-//           else if (input < 0 && input > -20) {
-//             window.alert("3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask");
-//             }
-//           else if (input <=-20){
-//             window.alert("don't run");
-//             }
-//         }
-// }
-// }
 // entry(input);
