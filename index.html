@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>What to wear for cold weather running</title>
-    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
-    </style>
-  </head>
-  <body>
-    <!-- fixed image of running shoes -->
-      <!-- <nav> -->
-        <!--nav bar for website. Fixed? link to weather.com
-        <a href="http://www.weather.com">Check the weather</a>
-        <a href="http://www.mapmyrun.com/">Where to run</a>
-      </nav>
-    -->
-      <h1>What to wear for cold weather running</h1>
-      <h2>Enter the current temperature</h2>
-      <input class="text-box" type="text" class="textfield" value="" id="extra7" name="extra7">
-      <button id="click-me" type="button" name="button">Submit</button>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <title>What to wear for cold weather running</title>
+  <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div class='row' id='header'>
+  <div class='col-md-12'>
+    <h1>Local Run</h1>
+    <button>How it works</button>
+  </div>
+</div>
+
+
+<div class='row' id='inputSection'>
+  <div class='col-md-12'>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="cityInput"></label>
+        <input type="text" class="form-control" id="cityInput" placeholder="city"></input>
+      </div>
+      <div class="form-group">
+        <label for="stateInput"></label>
+        <input type="text" class="form-control" id="stateInput" placeholder="state"></input>
+      </div>
+      <button type="submit" class="btn btn-default" id="button">get running</button>
+    </form>
+  </div>
+</div>
+
+
+<div class='container'>
+  <div class='row' id='clothingRec'>
+    <div class='col-md-12'>
 
       <div class='above30'>
         <p>"Above 30 : 1 top, 1 bottom. long sleeve + tights"</p>
@@ -29,7 +55,7 @@
 
       <div class='between10and20'>
         <p>"Between 10 and 20 : 2 tops, 2 bottoms. base layer + jacket + tights + pants</p>
-      </div>
+     </div>
 
       <div class='between10and0'>
         <p>"Between 0 and 10 : 3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants"</p>
@@ -37,12 +63,76 @@
 
       <div class='between0andneg20'>
         <p>"Between 0 and -20 : 3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask</p>
-      </div>
+     </div>
 
       <div class='below20'>
-        <p>"Below -20 : don't run"</p>
-      </div>
+       <p>"Below -20 : don't run"</p>
+     </div>
 
-    <script type="text/javascript" src="practice.js"></script>
-  </body>
+    </div>
+  </div>
+
+  <div class='row' id='line'>
+    <div class='col-md-12'>
+    </div>
+  </div>
+
+  <div class='row' id='howItWorks'>
+    <div class='col-md-12'>
+      <h2>how it works</h2>
+      <p>
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      </p>
+    </div>
+  </div>
+
+  <div class='row' id='line'>
+    <div class='col-md-12'>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <img class="recPic" src="">
+    </div>
+    <div class="col-md-3">
+        <img class="recPic" src="">
+    </div>
+    <div class="col-md-3">
+        <img class="recPic" src="">
+    </div>
+    <div class="col-md-3">
+        <img class="recPic" src="">
+    </div>
+  </div>
+
+  <div class='row' id='line'>
+    <div class='col-md-12'>
+    </div>
+  </div>
+
+  <div class='row' id='followMe'>
+    <div class='col-md-12'>
+      <h3>follow me</h3>
+      <span class='glyphicon glyphicon-btc'></span>
+      <span class='glyphicon glyphicon-btc'></span>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script type="text/javascript" src='practice.js'></script>
+
+
+</body>
+
 </html>
