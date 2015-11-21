@@ -4,8 +4,6 @@
 //flickr API key
 // 4ecdea272c9fed692c944e941da9ed73
 
-
-
 var above30 = document.getElementsByClassName('above30')[0];
 above30.style.display = 'none';
 
@@ -31,18 +29,6 @@ var button = document.querySelector('#button');
 
 button.addEventListener('click', function(event){
   event.preventDefault();
-
-  // city name to zip
-  // $.ajax({
-  //   url: 'https://www.zipcodeapi.com/rest/js-Q7YvTzD1xCqPIsNTh4QTV4lKHk8NHoyxww3p6HqDjRt2jgVBlLvhQQ2xaalSyUq4/city-zips.json/'+cityInput.value+'/'+stateInput.value,
-  //   method: "GET",
-  //   success: function(data) {
-  //     var allZip = JSON.stringify(data);
-  //     var zipObject = JSON.parse(allZip);
-  //     firstZip = zipObject['zip_codes'][0];
-  //     console.log(firstZip);
-  //   }
-  // });
 
   //  weather based on zip
   $.ajax({
@@ -77,45 +63,43 @@ button.addEventListener('click', function(event){
        else if(far <=-21){
           below20.style.display = 'block';
         }
+        //  if weatherID equals a key in the weatherID array, then
+            var weatherObjectID=weatherObject.weather[0].id;
+            var weatherIDKeys=Object.keys(weatherID);
+              if(weatherObjectID = weatherIDKeys) {
+                // access the images array for the correct key
+                // display that image on the header
+                // $('#header').append("<img src='http://frugivoremag.com/cms/wp-content/uploads/2012/10/Screen-Shot-2012-10-17-at-1.29.08-AM.png' />");
+                // $('#header').append("<img src='http://frugivoremag.com/cms/wp-content/uploads/2012/10/Screen-Shot-2012-10-17-at-1.29.08-AM.png' />");
+                $.ajax({
+                  url: 'http://frugivoremag.com/cms/wp-content/uploads/2012/10/Screen-Shot-2012-10-17-at-1.29.08-AM.png',
+                  method: "GET",
+                  contentType: "image/png",
 
-      var weatherDescription = weatherObject.weather[0].description;
-        //  console.log(weatherDescription);
-        for(var key in weatherID){
-          if(weatherDescription === weatherID[key]){
-            console.log('it worked');
-             $('#header').append("<img src='http://frugivoremag.com/cms/wp-content/uploads/2012/10/Screen-Shot-2012-10-17-at-1.29.08-AM.png' />");
-          }
-        }
+                  success: function(data) {
+                    document.getElementById('#header').style.display = data;
+                    }
+                  })
+
+
     }
-  });
+  }
+});
 });
 
-// IMAGES
-// thunderstorm
-// https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg
-
-// drizzle
-// http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg
-
-// rain
-// http://www.indigofragrance.com/images/lgrs0.gif
-
-// snow
-// http://moovein.com/wp-content/uploads/2014/01/UnitAccessWhenSnowingFeature.jpg
-
-// atmosphere
-// http://globe-views.com/dcim/dreams/fog/fog-03.jpg
-
-// clouds
-// http://coclouds.com/wp-content/uploads/2011/05/variety-clouds-2011-05-21.jpg
-
-// extreme
-// http://www.nature.com/news/2011/110907/images/weathers450.jpg
-
-// additional
-// https://c2.staticflickr.com/4/3033/2702962650_597b16eaa9_b.jpg
 
 
+
+var images = {
+  thunderstorm: 'https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg',
+  drizzle: 'http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg',
+  rain: 'http://www.indigofragrance.com/images/lgrs0.gif',
+  snow: 'http://moovein.com/wp-content/uploads/2014/01/UnitAccessWhenSnowingFeature.jpg',
+  atmosphere: 'http://globe-views.com/dcim/dreams/fog/fog-03.jpg',
+  clouds:'http://coclouds.com/wp-content/uploads/2011/05/variety-clouds-2011-05-21.jpg',
+  extreme:'http://www.nature.com/news/2011/110907/images/weathers450.jpg',
+  additional: 'https://c2.staticflickr.com/4/3033/2702962650_597b16eaa9_b.jpg'
+};
 
 var weatherID ={
   // thunderstorm
