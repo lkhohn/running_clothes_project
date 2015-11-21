@@ -51,6 +51,7 @@ button.addEventListener('click', function(event){
     success: function(data) {
       var weatherData = JSON.stringify(data);
       var weatherObject = JSON.parse(weatherData);
+      console.log(weatherObject);
       //convert temperature to Fahrenheit
       var kelvin = weatherObject.main.temp;
       function roundTemperature(kelvin){
@@ -97,6 +98,8 @@ $.ajax({
 });
 
 
+// make an object with the weather codes
+// match codes to a specific weather picture
 
 
 
