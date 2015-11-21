@@ -90,22 +90,38 @@ button.addEventListener('click', function(event){
   });
 });
 
+// IMAGES
+// thunderstorm
+// https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg
 
+// drizzle
+// http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg
 
+// rain
+// http://www.indigofragrance.com/images/lgrs0.gif
 
+// snow
+// http://moovein.com/wp-content/uploads/2014/01/UnitAccessWhenSnowingFeature.jpg
 
+// atmosphere
+// http://globe-views.com/dcim/dreams/fog/fog-03.jpg
 
+// clouds
+// http://coclouds.com/wp-content/uploads/2011/05/variety-clouds-2011-05-21.jpg
 
+// extreme
+// http://www.nature.com/news/2011/110907/images/weathers450.jpg
 
-
+// additional
+// https://c2.staticflickr.com/4/3033/2702962650_597b16eaa9_b.jpg
 
 
 
 var weatherID ={
   // thunderstorm
-  200: 'thunderstorm with light rain',
-  201: 'thunderstorm with rain',
-  202: 'thunderstorm with heavy rain',
+  200:  'thunderstorm with light rain',
+  201:  'thunderstorm with rain',
+  202:  'thunderstorm with heavy rain',
   210:	'light thunderstorm',
   211:	'thunderstorm',
   212:	'heavy thunderstorm',
@@ -113,6 +129,8 @@ var weatherID ={
   230:	'thunderstorm with light drizzle',
   231:	'thunderstorm with drizzle',
   232:	'thunderstorm with heavy drizzle',
+  960:	'Storm',
+
   // drizzle
   300:	'light intensity drizzle',
   301:	'drizzle',
@@ -170,6 +188,11 @@ var weatherID ={
   904:	'hot',
   905:	'windy',
   906:	'hail',
+  957:	'High wind, near gale',
+  958:	'Gale',
+  959:	'Severe Gale',
+  961:	'Violent Storm',
+  962:	'Hurricane',
 // additional
   950:	'Setting',
   951:	'Calm',
@@ -177,11 +200,5 @@ var weatherID ={
   953:	'Gentle Breeze',
   954:	'Moderate breeze',
   955:	'Fresh Breeze',
-  956:	'Strong breeze',
-  957:	'High wind, near gale',
-  958:	'Gale',
-  959:	'Severe Gale',
-  960:	'Storm',
-  961:	'Violent Storm',
-  962:	'Hurricane'
+  956:	'Strong breeze'
   };
