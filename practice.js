@@ -4,6 +4,26 @@
 //flickr API key
 // 4ecdea272c9fed692c944e941da9ed73
 
+
+// scroll automatically to the how it works section
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var above30 = document.getElementsByClassName('above30')[0];
 above30.style.display = 'none';
 
@@ -70,17 +90,7 @@ button.addEventListener('click', function(event){
                 // access the images array for the correct key
                 // display that image on the header
                 // $('#header').append("<img src='http://frugivoremag.com/cms/wp-content/uploads/2012/10/Screen-Shot-2012-10-17-at-1.29.08-AM.png' />");
-                // $('#header').append("<img src='http://frugivoremag.com/cms/wp-content/uploads/2012/10/Screen-Shot-2012-10-17-at-1.29.08-AM.png' />");
-                $.ajax({
-                  url: 'http://frugivoremag.com/cms/wp-content/uploads/2012/10/Screen-Shot-2012-10-17-at-1.29.08-AM.png',
-                  method: "GET",
-                  contentType: "image/png",
-
-                  success: function(data) {
-                    document.getElementById('#header').style.display = data;
-                    }
-                  })
-
+                // $('#header').replaceWith(weatherImages['thunderstorm']);
 
     }
   }
@@ -88,9 +98,17 @@ button.addEventListener('click', function(event){
 });
 
 
+// var clothingSuggestions = {
+//     above30: 'http://www.galjaja.com/wp-content/uploads/2014/05/30/2/955-Nike-Dri-FIT-Knit-Long-Sleeve-Half-Zip-Running-Shirt-for-Women-4.jpg',
+//     between20and30: 'https://s-media-cache-ak0.pinimg.com/236x/b7/c4/67/b7c467d50b86a2bf5bf910f02170897a.jpg',
+//     between10and20: 'https://s-media-cache-ak0.pinimg.com/236x/29/a4/d0/29a4d0c9c193879327b22ff341382743.jpg',
+//     between0and10: 'http://www.nycrunningmama.com/wp-content/uploads/2015/02/photo-99.jpg',
+//     between0andneg20: 'http://cdn.gearpatrol.com/wp-content/uploads/2015/11/layers-to-run-gear-patrol-6.jpg',
+//     below20: 'http://static.vibe.com/uploads/2014/01/VIBE-Vixen-Cold-Weather-Meme51.png'
+// }
 
 
-var images = {
+var weatherImages = {
   thunderstorm: 'https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg',
   drizzle: 'http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg',
   rain: 'http://www.indigofragrance.com/images/lgrs0.gif',

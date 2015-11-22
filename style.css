@@ -43,9 +43,20 @@ img{
   background-color: black;
 }
 
+.howItWorksTitle, .howItWorksText {
+  text-align:center;
+}
+
+
 #followMe {
   text-align:center;
   margin-bottom:10em;
+}
+
+.icon {
+  height: 4em;
+  width: 4em;
+  margin: 2em;
 }
 
 .recPic {
