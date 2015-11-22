@@ -1,13 +1,15 @@
 #header {
   text-align: center;
   padding-bottom: 6em;
+
+}
+
+.titleWrapper{
   border-style: solid;
   border-width: thin;
 }
-
-.headerImg{
-  /*background: url(http://photos2.demandstudios.com/DM-Resize/photos.demandstudios.com/getty/article/154/235/200372915-001_XS.jpg?w=1200&h=630&crop_min=1&keep_ratio=1) no-repeat fixed 0 0 / cover;*/
-  height: 500px;
+.weatherImg {
+  height: 40em;;
   width: 100%;
 }
 
@@ -15,23 +17,17 @@
 #inputSection {
   text-align: center;
   padding: 2em 2em;
-  border-style: solid;
-  border-width: thin;
+}
+
+.clothingRecImage{
+  height: 10em;;
+  width: 10em;
 }
 
 #clothingRec {
   height: 20em;
   width: auto;
   text-align:center;
-  border-style: solid;
-  border-width: thin;
-}
-
-img{
-  height: 10em;
-  width: 10em;
-  border-style: solid;
-  border-width: thin;
 }
 
 #line {
@@ -47,6 +43,12 @@ img{
   text-align:center;
 }
 
+img{
+  height: 10em;
+  width: 10em;
+  border-style: solid;
+  border-width: thin;
+}
 
 #followMe {
   text-align:center;
