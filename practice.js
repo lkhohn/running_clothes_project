@@ -14,7 +14,6 @@ $('#howItWorksButton').on('click', function(event) {
      }, 300);
 });
 
-
 var above30 = document.getElementsByClassName('above30')[0];
 above30.style.display = 'none';
 
@@ -147,4 +146,40 @@ button.addEventListener('click', function(event){
 //         }
 //         testClothing(-5);
 //       }
+// });
+// TESTING SECTION
+//     $.ajax({
+//       url: '/test.json',
+//       method: "GET",
+//       success: function(data) {
+//         var weatherData = JSON.stringify(data);
+//         var dataObject = JSON.parse(weatherData);
+//         function testWeather(input){
+//           if(input === dataObject.weather200){
+//             $('.weatherImgSection').append("<img class='weatherImg' src='https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg'/>");
+//           }
+//           else if(input === dataObject.weather300){
+//             $('.weatherImgSection').append("<img class='weatherImg' src='http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg'/>");
+//           }
+//           else if(input === dataObject.weather500){
+//             $('.weatherImgSection').append("<img class='weatherImg' src='http://www.indigofragrance.com/images/lgrs0.gif'/>");
+//           }
+//           else if(input === dataObject.weather600){
+//             $('.weatherImgSection').append("<img class='weatherImg' src='http://moovein.com/wp-content/uploads/2014/01/UnitAccessWhenSnowingFeature.jpg'/>");
+//           }
+//           else if(input === dataObject.weather700){
+//             $('.weatherImgSection').append("<img class='weatherImg' src='http://globe-views.com/dcim/dreams/fog/fog-03.jpg'/>");
+//           }
+//           else if(input === dataObject.weather800){
+//             $('.weatherImgSection').append("<img class='weatherImg' src='http://coclouds.com/wp-content/uploads/2011/05/variety-clouds-2011-05-21.jpg'/>");
+//           }
+//           else if(input === dataObject.weather900){
+//             $('.weatherImgSection').append("<img class='weatherImg' src='http://www.nature.com/news/2011/110907/images/weathers450.jpg'/>");
+//           }
+//           else if(input === dataObject.weather950){
+//             $('.weatherImgSection').append("<img class='weatherImg' src='https://c2.staticflickr.com/4/3033/2702962650_597b16eaa9_b.jpg'/>");
+//           }
+//         }
+//         testWeather(950);
+// }
 // });
