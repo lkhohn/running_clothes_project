@@ -40,7 +40,6 @@ var button = document.querySelector('#button');
 
 button.addEventListener('click', function(event){
   event.preventDefault();
-
   //  weather based on city and state input
   $.ajax({
     url: 'http://api.openweathermap.org/data/2.5/weather?q='+cityInput.value+',840&APPID=d6cf401d582e33e634bca26a32b22f60',
@@ -49,7 +48,6 @@ button.addEventListener('click', function(event){
       var weatherData = JSON.stringify(data);
       var weatherObject = JSON.parse(weatherData);
       var kelvin = weatherObject.main.temp;
-      // round the outputted kelvin temperature
       function roundTemperature(kelvin){
         kelvin = kelvin.toFixed(1);
         return kelvin;
@@ -84,28 +82,28 @@ button.addEventListener('click', function(event){
         var weatherObjectCurrent=weatherObject.weather[0].id;
             function picSelector (x) {
               if(x<=232 && x>=200 || x===960){
-              $('#header').append("<img class='weatherImg' src='https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg'/>");
+              $('.weatherImgSection').append("<img class='weatherImg' src='https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg'/>");
               }
               else if(x<=321 && x>=300){
-              $('#header').append("<img class='weatherImg' src='http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg'/>");
+              $('.weatherImgSection').append("<img class='weatherImg' src='http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg'/>");
               }
               else if(x<=531 && x>=500){
-              $('#header').append("<img class='weatherImg' src='http://www.indigofragrance.com/images/lgrs0.gif'/>");
+              $('.weatherImgSection').append("<img class='weatherImg' src='http://www.indigofragrance.com/images/lgrs0.gif'/>");
               }
               else if(x<=622 && x>=600){
-              $('#header').append("<img class='weatherImg' src='http://moovein.com/wp-content/uploads/2014/01/UnitAccessWhenSnowingFeature.jpg'/>");
+              $('.weatherImgSection').append("<img class='weatherImg' src='http://moovein.com/wp-content/uploads/2014/01/UnitAccessWhenSnowingFeature.jpg'/>");
               }
               else if(x<=781 && x>=700){
-              $('#header').append("<img class='weatherImg' src='http://globe-views.com/dcim/dreams/fog/fog-03.jpg'/>");
+              $('.weatherImgSection').append("<img class='weatherImg' src='http://globe-views.com/dcim/dreams/fog/fog-03.jpg'/>");
               }
               else if(x<=804 && x>=800){
-              $('#header').append("<img class='weatherImg' src='http://coclouds.com/wp-content/uploads/2011/05/variety-clouds-2011-05-21.jpg'/>");
+              $('.weatherImgSection').append("<img class='weatherImg' src='http://coclouds.com/wp-content/uploads/2011/05/variety-clouds-2011-05-21.jpg'/>");
               }
               else if(x<=906 && x>=900 || x<=962 && x>=957){
-              $('#header').append("<img class='weatherImg' src='http://www.nature.com/news/2011/110907/images/weathers450.jpg'/>");
+              $('.weatherImgSection').append("<img class='weatherImg' src='http://www.nature.com/news/2011/110907/images/weathers450.jpg'/>");
               }
               else if(x<=956 && x>=950){
-              $('#header').append("<img class='weatherImg' src='https://c2.staticflickr.com/4/3033/2702962650_597b16eaa9_b.jpg'/>");
+              $('.weatherImgSection').append("<img class='weatherImg' src='https://c2.staticflickr.com/4/3033/2702962650_597b16eaa9_b.jpg'/>");
               }
             }
             picSelector(weatherObjectCurrent);

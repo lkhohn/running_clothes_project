@@ -1,33 +1,35 @@
-#header {
-  text-align: center;
-  padding-bottom: 6em;
-
+.weatherImgSection{
+  height: 30em;
+  width:100%;
 }
 
 .titleWrapper{
-  border-style: solid;
-  border-width: thin;
-}
-.weatherImg {
-  height: 40em;;
+  text-align: center;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 0;
   width: 100%;
 }
 
+.weatherImg {
+  height: 30em;
+  width: 100%;
+}
 
 #inputSection {
   text-align: center;
-  padding: 2em 2em;
+  padding-top:2em;
 }
 
 .clothingRecImage{
-  height: 10em;;
-  width: 10em;
+  height: 30em;;
+  width: 30em;
+  padding-top:2em;
 }
 
 #clothingRec {
-  height: 20em;
-  width: auto;
   text-align:center;
+  padding-top:2em;
 }
 
 #line {
