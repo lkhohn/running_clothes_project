@@ -6,10 +6,16 @@
 
 
 // scroll automatically to the how it works section
-//
-
-
-
+//select the button and when you click on it --do this function
+  $('.howItWorksButton').on('click', function(event) {
+    // prevent it from automatically doing this
+     event.preventDefault();
+     // scroll through the page
+     $('html, body').animate({
+       // scroll to the howItWorks sections
+          scrollTop: $('#howItWorks').offset().top
+       }, 300);
+  });
 
 
 
@@ -50,49 +56,79 @@ var button = document.querySelector('#button');
 button.addEventListener('click', function(event){
   event.preventDefault();
 
-  //  weather based on zip
+  //  weather based on city and state input
   $.ajax({
     url: 'http://api.openweathermap.org/data/2.5/weather?q='+cityInput.value+',840&APPID=d6cf401d582e33e634bca26a32b22f60',
     method: "GET",
     success: function(data) {
       var weatherData = JSON.stringify(data);
       var weatherObject = JSON.parse(weatherData);
-      //convert temperature to Fahrenheit
       var kelvin = weatherObject.main.temp;
+      // round the outputted kelvin temperature
       function roundTemperature(kelvin){
-      kelvin = kelvin.toFixed(1);
-      return kelvin;
-      }
+        kelvin = kelvin.toFixed(1);
+        return kelvin;
+        }
+      //convert temperature to Fahrenheit
       var far = (kelvin - 273.25) * 1.800 + 32.00;
 
       if(far >= 30){
         above30.style.display = 'block';
+        $('#clothingRec').append("<img src='http://www.galjaja.com/wp-content/uploads/2014/05/30/2/955-Nike-Dri-FIT-Knit-Long-Sleeve-Half-Zip-Running-Shirt-for-Women-4.jpg'/>");
         }
       else if (far >= 20 && far <= 29){
          between20and30.style.display = 'block';
+         $('#clothingRec').append("<img src='https://s-media-cache-ak0.pinimg.com/236x/b7/c4/67/b7c467d50b86a2bf5bf910f02170897a.jpg'/>");
         }
       else if(far >= 10 && far <= 19){
           between10and20.style.display = 'block';
+          $('#clothingRec').append("<img src='https://s-media-cache-ak0.pinimg.com/236x/29/a4/d0/29a4d0c9c193879327b22ff341382743.jpg'/>");
         }
       else if(far >= 0 && far <= 9){
         between0and10.style.display = 'block';
+        $('#clothingRec').append("<img src='http://www.nycrunningmama.com/wp-content/uploads/2015/02/photo-99.jpg'/>");
         }
        else if(far <= -1 && far >= -20){
          between0andneg20.style.display = 'block';
+         $('#clothingRec').append("<img src='http://cdn.gearpatrol.com/wp-content/uploads/2015/11/layers-to-run-gear-patrol-6.jpg'/>");
         }
        else if(far <=-21){
           below20.style.display = 'block';
-        }
-        //  if weatherID equals a key in the weatherID array, then
-            var weatherObjectID=weatherObject.weather[0].id;
-            var weatherIDKeys=Object.keys(weatherID);
-              if(weatherObjectID = weatherIDKeys) {
-                // access the images array for the correct key
-                // display that image on the header
-                // $('#header').append("<img src='http://frugivoremag.com/cms/wp-content/uploads/2012/10/Screen-Shot-2012-10-17-at-1.29.08-AM.png' />");
-                // $('#header').replaceWith(weatherImages['thunderstorm']);
+          $('#clothingRec').append("<img src='http://static.vibe.com/uploads/2014/01/VIBE-Vixen-Cold-Weather-Meme51.png'/>");
 
-    }
+        }
+            var weatherObjectCurrent=weatherObject.weather[0].id;
+            console.log(weatherObjectCurrent);
+            var weatherIDKey=Object.keys(weatherID);
+                function picSelector (x) {
+                  if(x<=232 && x>=200 || x===960){
+                  $('#header').append("<img src='https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg'/>");
+                  }
+                  else if(x<=321 && x>=300){
+                  $('#header').append("<img src='http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg'/>");
+                  }
+                  else if(x<=531 && x>=500){
+                  $('#header').append("<img src='http://www.indigofragrance.com/images/lgrs0.gif'/>");
+                  }
+                  else if(x<=622 && x>=600){
+                  $('#header').append("<img src='http://moovein.com/wp-content/uploads/2014/01/UnitAccessWhenSnowingFeature.jpg'/>");
+                  }
+                  else if(x<=781 && x>=700){
+                  $('#header').append("<img src='http://globe-views.com/dcim/dreams/fog/fog-03.jpg'/>");
+                  }
+                  else if(x<=804 && x>=800){
+                  $('#header').append("<img src='http://coclouds.com/wp-content/uploads/2011/05/variety-clouds-2011-05-21.jpg'/>");
+                  }
+                  else if(x<=906 && x>=900 || x<=962 && x>=957){
+                  $('#header').append("<img src='http://www.nature.com/news/2011/110907/images/weathers450.jpg'/>");
+                  }
+                  else if(x<=956 && x>=950){
+                  $('#header').append("<img src='https://c2.staticflickr.com/4/3033/2702962650_597b16eaa9_b.jpg'/>");
+                  }
+                }
+                picSelector(weatherObjectCurrent);
+
+
   }
 });
 });
@@ -107,17 +143,17 @@ button.addEventListener('click', function(event){
 //     below20: 'http://static.vibe.com/uploads/2014/01/VIBE-Vixen-Cold-Weather-Meme51.png'
 // }
 
-
-var weatherImages = {
-  thunderstorm: 'https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg',
-  drizzle: 'http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg',
-  rain: 'http://www.indigofragrance.com/images/lgrs0.gif',
-  snow: 'http://moovein.com/wp-content/uploads/2014/01/UnitAccessWhenSnowingFeature.jpg',
-  atmosphere: 'http://globe-views.com/dcim/dreams/fog/fog-03.jpg',
-  clouds:'http://coclouds.com/wp-content/uploads/2011/05/variety-clouds-2011-05-21.jpg',
-  extreme:'http://www.nature.com/news/2011/110907/images/weathers450.jpg',
-  additional: 'https://c2.staticflickr.com/4/3033/2702962650_597b16eaa9_b.jpg'
-};
+//
+// var weatherImages = {
+//   thunderstorm: 'https://i.ytimg.com/vi/XDYChO5FMd4/hqdefault.jpg',
+//   drizzle: 'http://rustikmagazine.com/wordpress/wp-content/uploads/2013/05/rain_GollyGForce-631x354.jpg',
+//   rain: 'http://www.indigofragrance.com/images/lgrs0.gif',
+//   snow: 'http://moovein.com/wp-content/uploads/2014/01/UnitAccessWhenSnowingFeature.jpg',
+//   atmosphere: 'http://globe-views.com/dcim/dreams/fog/fog-03.jpg',
+//   clouds:'http://coclouds.com/wp-content/uploads/2011/05/variety-clouds-2011-05-21.jpg',
+//   extreme:'http://www.nature.com/news/2011/110907/images/weathers450.jpg',
+//   additional: 'https://c2.staticflickr.com/4/3033/2702962650_597b16eaa9_b.jpg'
+// };
 
 var weatherID ={
   // thunderstorm
