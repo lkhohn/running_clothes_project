@@ -1,3 +1,15 @@
+#header h1 {
+  font-size: 8em;
+  text-shadow:#888 2px 2px 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#howItWorksButton {
+  text-shadow:#888 2px 2px 10px;
+  width:8em;
+  height:3em;
+  font-family: 'Raleway', sans-serif;
+}
 .weatherImgSection{
   height: 30em;
   width:100%;
@@ -19,17 +31,19 @@
 #inputSection {
   text-align: center;
   padding-top:2em;
+  font-family: 'Raleway', sans-serif;
 }
 
 .clothingRecImage{
   height: 30em;;
   width: 30em;
-  padding-top:2em;
+  padding-top: 2em;
 }
 
 #clothingRec {
   text-align:center;
   padding-top:2em;
+  font-family: 'Raleway', sans-serif;
 }
 
 #line {
@@ -45,6 +59,14 @@
   text-align:center;
 }
 
+.howItWorksTitle {
+  font-family: 'Raleway', sans-serif;
+}
+
+.howItWorksText {
+  font-family: 'Open Sans', sans-serif;
+}
+
 img{
   height: 10em;
   width: 10em;
@@ -55,14 +77,11 @@ img{
 #followMe {
   text-align:center;
   margin-bottom:10em;
+  font-family: 'Raleway', sans-serif;
 }
 
 .icon {
   height: 4em;
   width: 4em;
   margin: 2em;
-}
-
-.recPic {
-  display:inline-block;
 }

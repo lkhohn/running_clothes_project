@@ -4,7 +4,7 @@
 
 // scroll automatically to the how it works section
 //select the button and when you click on it --do this function
-$('.howItWorksButton').on('click', function(event) {
+$('#howItWorksButton').on('click', function(event) {
   // prevent it from automatically doing this
    event.preventDefault();
    // scroll through the page
@@ -109,4 +109,42 @@ button.addEventListener('click', function(event){
             picSelector(weatherObjectCurrent);
       }
     });
+    $('h1').css('color', 'white');
 });
+
+// TESTING SECTION
+//     $.ajax({
+//       url: '/temp.json',
+//       method: "GET",
+//       success: function(data) {
+//         var cityData = JSON.stringify(data);
+//         var dataObject = JSON.parse(cityData);
+//         function testClothing(input){
+//         if(input === dataObject.CityOne){
+//           above30.style.display = 'block';
+//           $('#clothingRec').append("<img class='clothingRecImage' src='http://www.galjaja.com/wp-content/uploads/2014/05/30/2/955-Nike-Dri-FIT-Knit-Long-Sleeve-Half-Zip-Running-Shirt-for-Women-4.jpg'/>");
+//         }
+//         else if(input === dataObject.CityTwo){
+//           between20and30.style.display = 'block';
+//           $('#clothingRec').append("<img class='clothingRecImage' src='https://s-media-cache-ak0.pinimg.com/236x/b7/c4/67/b7c467d50b86a2bf5bf910f02170897a.jpg'/>");
+//         }
+//         else if(input === dataObject.CityThree){
+//           between10and20.style.display = 'block';
+//           $('#clothingRec').append("<img class='clothingRecImage' src='https://s-media-cache-ak0.pinimg.com/236x/29/a4/d0/29a4d0c9c193879327b22ff341382743.jpg'/>");
+//         }
+//         else if(input === dataObject.CityFour){
+//           between0and10.style.display = 'block';
+//           $('#clothingRec').append("<img class='clothingRecImage' src='http://www.nycrunningmama.com/wp-content/uploads/2015/02/photo-99.jpg'/>");
+//         }
+//         else if(input === dataObject.CityFive){
+//           between0andneg20.style.display = 'block';
+//           $('#clothingRec').append("<img class='clothingRecImage' src='http://cdn.gearpatrol.com/wp-content/uploads/2015/11/layers-to-run-gear-patrol-6.jpg'/>");
+//         }
+//         else if(input === dataObject.CitySix){
+//           below20.style.display = 'block';
+//           $('#clothingRec').append("<img class='clothingRecImage' src='http://static.vibe.com/uploads/2014/01/VIBE-Vixen-Cold-Weather-Meme51.png'/>");
+//         }
+//         }
+//         testClothing(-5);
+//       }
+// });
