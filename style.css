@@ -35,11 +35,13 @@
 }
 
 .clothingRecImage{
-  height: 30em;;
-  width: 30em;
+  height: 20em;;
+  width: 20em;
   padding-top: 2em;
 }
-
+#clothingRecDayOne, #clothingRecDayTwo, #clothingRecDayThree  {
+  padding-top:4em;
+}
 #clothingRec {
   text-align:center;
   padding-top:2em;
@@ -83,5 +85,5 @@ img{
 .icon {
   height: 3em;
   width: 3em;
-  margin: 1em;
+  margin: 2em;
 }
