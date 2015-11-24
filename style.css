@@ -29,15 +29,18 @@
   font-family: 'Raleway', sans-serif;
 }
 
-.clothingRecImage{
-  height: 20em;;
+/*.clothingRecImage{
+  height: 20em;
   width: 20em;
   padding-top: 2em;
-}
+}*/
 
 #clothingRecDayOne, #clothingRecDayTwo, #clothingRecDayThree  {
-  padding-top:4em;
+  margin-top:4em;
+  /*padding-top:70em;*/
+  height:40em;
 }
+
 
 #clothingRec {
   text-align:center;
