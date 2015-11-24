@@ -42,6 +42,16 @@ var button = document.querySelector('#button');
 
 button.addEventListener('click', function(event){
   event.preventDefault();
+
+  // $('.container').empty();
+  // //create a function that will clear anything that was appended
+  // // save the appended data into the history
+  // function resetform() {
+  // document.getElementsByTagName("body").reset();
+  //
+  // }
+
+
   $.ajax({
     url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBwKaJeGg_n8IB1jeaGnvrQNEqe2d94iVQ',
     method: "POST",
@@ -56,9 +66,10 @@ button.addEventListener('click', function(event){
       success: function(data) {
         var weatherData = JSON.stringify(data);
         var weatherObject = JSON.parse(weatherData);
+        console.log(weatherObject);
         var dayOneKelvin = weatherObject['list']['0']['main']['temp'];
-        var dayTwoKelvin = weatherObject['list']['3']['main']['temp'];
-        var dayThreeKelvin = weatherObject['list']['11']['main']['temp'];
+        var dayTwoKelvin = weatherObject['list']['8']['main']['temp'];
+        var dayThreeKelvin = weatherObject['list']['16']['main']['temp'];
           function dayOne (input) {
             var far = (input - 273.25) * 1.800 + 32.00;
               if(far >= 30){
@@ -183,8 +194,6 @@ button.addEventListener('click', function(event){
     }
   });
 });
-
-
 
 
 

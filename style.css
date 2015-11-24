@@ -39,9 +39,11 @@
   width: 20em;
   padding-top: 2em;
 }
+
 #clothingRecDayOne, #clothingRecDayTwo, #clothingRecDayThree  {
   padding-top:4em;
 }
+
 #clothingRec {
   text-align:center;
   padding-top:2em;
@@ -57,11 +59,11 @@
   background-color: black;
 }
 
-.howItWorksTitle, .howItWorksText {
+.howItWorksTitle, .howItWorksText, .gearRecommendations {
   text-align:center;
 }
 
-.howItWorksTitle {
+.howItWorksTitle, .gearRecommendations {
   font-family: 'Raleway', sans-serif;
 }
 
@@ -75,6 +77,7 @@ img{
   border-style: solid;
   border-width: thin;
 }
+
 
 #followMe {
   text-align:center;

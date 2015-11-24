@@ -120,19 +120,30 @@
   </div>
 
   <div class="row">
-    <div class="col-md-3">
-        <img class="recPic" src="">
-    </div>
-    <div class="col-md-3">
-        <img class="recPic" src="">
-    </div>
-    <div class="col-md-3">
-        <img class="recPic" src="">
-    </div>
-    <div class="col-md-3">
-        <img class="recPic" src="">
+    <div class='col-md-12'>
+      <h2 class='gearRecommendations'>Gear recommendations</h2>
+      <!-- <div class="col-md-3">
+          <div class="recPic1"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="recPic2"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="recPic3"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="recPic4"></div>
+      </div> -->
     </div>
   </div>
+
+    <div class='row'>
+      <div class='col-md-12'>
+        <div id="results">
+        </div>
+      </div>
+    </div>
+
 
   <div class='row' id='line'>
     <div class='col-md-12'>
@@ -151,12 +162,59 @@
 
 </div>
 
+<script>
+var url = "http://svcs.ebay.com/services/search/FindingService/v1";
+ url += "?OPERATION-NAME=findItemsAdvanced";
+ url += "&SERVICE-VERSION=1.0.0";
+ url += "&SECURITY-APPNAME=Galvaniz-fb1a-4804-b9f3-f5a4557d9ac8";
+ url += "&GLOBAL-ID=EBAY-US";
+ url += "&RESPONSE-DATA-FORMAT=JSON";
+ url += "&callback=_cb_findItemsAdvanced";
+ url += "&REST-PAYLOAD";
+ url += "&GetMultipleItems=TRUE";
+ url += "&categoryId=11450"; //clothing
+ url += "&categoryId=888"; // sports gear
+ url += "&keywords=%22cold+weather+running%22";
+ url += "&HideDuplicateItems=TRUE";
+ url += "&paginationInput.entriesPerPage=100";
+ // url += "&paginationOutput.pageNumber=1";
+ url += "&paginationInput.pageNumber=1";
+ url += "&paginationOutput.totalEntries=20";
 
+function _cb_findItemsAdvanced(root){
+  var items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
+  var itemsRandom = items[Math.floor(Math.random()*items.length)];
+  var html = [];
+  html.push('<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody>');
+
+    var item     = itemsRandom;
+    var title    = item.title;
+    var pic      = item.galleryURL;
+    var viewitem = item.viewItemURL;
+
+    if (null != title && null != viewitem){
+      html.push('<tr><td>' + '<img src="' + pic + '" border="0">' + '</td>' +
+        '<td><a href="' + viewitem + '" target="_blank">' + title + '</a></td></tr>');
+      }
+  html.push('</tbody></table>');
+  document.getElementById("results").innerHTML = html.join("");
+}
+
+//Submit the request
+ s=document.createElement('script'); // create script element
+ s.src= url
+ document.body.appendChild(s);
+
+
+
+
+</script>
 
 
 
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <!-- <script src=http://svcs.ebay.com/services/search/FindingService/v1?SECURITY-APPNAME=Galvaniz-fb1a-4804-b9f3-f5a4557d9ac8&OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&RESPONSE-DATA-FORMAT=JSON&callback=_cb_findItemsByKeywords&REST-PAYLOAD&keywords=%22cold+weather+running%22&paginationInput.entriesPerPage=3></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
   <script type="text/javascript" src='practice.js'></script>
 
