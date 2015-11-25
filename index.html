@@ -1,200 +1,165 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>What to wear for cold weather running</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+  </head>
+  <body>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <title>What to wear for cold weather running</title>
-
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
-
-</head>
-
-<body>
-
-<div class='row' id='header'>
-  <div class='col-md-12'>
-    <div class='weatherImgSection'>
-    <!-- <img class='weatherImg' src='https://everydaylisamae.files.wordpress.com/2015/02/running.jpg'> -->
-    <!--center the title and button in the center of the picture. The text should be in white. Possibly put in small fade under letters to show up -->
-      <div class='titleWrapper'>
-        <h1>Local Run</h1>
-        <button type="button" class="btn btn-default" id='howItWorksButton' href='#howItWorksButton'>How it works</button>
+    <div class='row' id='header'>
+      <div class='col-md-12'>
+        <div class='weatherImgSection'>
+          <div class='titleWrapper'>
+            <h1>Local Run</h1>
+            <button type="button" class="btn btn-default" id='howItWorksButton' href='#howItWorksButton'>How it works</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class='row' id='inputSection'>
-  <div class='col-md-12'>
-    <form class="form-inline">
-      <div class="form-group">
-        <label for="cityInput"></label>
-        <input type="text" class="form-control" id="cityInput" placeholder="city"></input>
-      </div>
-      <div class="form-group">
-        <label for="stateInput"></label>
-        <input type="text" class="form-control" id="stateInput" placeholder="state"></input>
-      </div>
-      <button type="submit" class="btn btn-default" id="button">get running</button>
-    </form>
-  </div>
-</div>
-
-
-<div class='container'>
-  <div class='row'>
-    <div class='col-md-12'>
-      <div class="row">
-          <div class="col-md-4" id='clothingRecDayOne'>
-            <span id="dayOne"></span>
+    <div class='row' id='inputSection'>
+      <div class='col-md-12'>
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="cityInput"></label>
+            <input type="text" class="form-control" id="cityInput" placeholder="city"></input>
           </div>
-
-          <div class="col-md-4" id='clothingRecDayTwo'>
-            <span id="dayTwo"></span>
+          <div class="form-group">
+            <label for="stateInput"></label>
+            <input type="text" class="form-control" id="stateInput" placeholder="state"></input>
           </div>
-
-          <div class="col-md-4" id='clothingRecDayThree'>
-            <span id="dayThree"></span>
-          </div>
+          <button type="submit" class="btn btn-default" id="button">get running</button>
+        </form>
       </div>
+    </div>
+
+
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-12'>
+          <div class="row">
+            <div class="col-md-4" id='clothingRecDayOne'>
+              <span id="dayOne"></span>
+            </div>
+            <div class="col-md-4" id='clothingRecDayTwo'>
+              <span id="dayTwo"></span>
+            </div>
+            <div class="col-md-4" id='clothingRecDayThree'>
+              <span id="dayThree"></span>
+            </div>
+          </div>
           <div class='above30'></div>
           <div class='between20and30'></div>
           <div class='between10and20'></div>
           <div class='between0and10'></div>
           <div class='between0andneg20'></div>
           <div class='below20'></div>
-    </div>
-  </div>
-
-  <div class='row' id='line'>
-    <div class='col-md-12'>
-    </div>
-  </div>
-
-  <div class='row' id='howItWorks'>
-    <div class='col-md-12'>
-      <h2 class='howItWorksTitle'>how it works</h2>
-      <p class='howItWorksText'>
-        <!--make of 45-65 characters (including spaces) on each line -->
-        Cold weather running can be difficult. One look at the <br>
-        temperature and your motivation to run can be instantly <br>
-        dissolved. This application’s goal is to help you stay <br>
-        motivated. By allowing Google’s Geolocation software to <br>
-        determine your location, this software will let you know <br>
-        immediately what gear to wear on your workout. All without <br>
-        having to view the temperature! Enough knowledge to get <br>
-        you running without being discouraged by the temperature. <br>
-      </p>
-    </div>
-  </div>
-
-  <div class='row' id='line'>
-    <div class='col-md-12'>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class='col-md-12'>
-      <h2 class='gearRecommendations'>Gear recommendations</h2>
-      <!-- <div class="col-md-3">
-          <div class="recPic1"></div>
-      </div>
-      <div class="col-md-3">
-        <div class="recPic2"></div>
-      </div>
-      <div class="col-md-3">
-        <div class="recPic3"></div>
-      </div>
-      <div class="col-md-3">
-        <div class="recPic4"></div>
-      </div> -->
-    </div>
-  </div>
-
-    <div class='row'>
-      <div class='col-md-12'>
-        <div id="results">
         </div>
       </div>
+
+      <div class='row' id='line'>
+        <div class='col-md-12'></div>
+      </div>
+
+      <div class='row' id='howItWorks'>
+        <div class='col-md-12'>
+          <h2 class='howItWorksTitle'>how it works</h2>
+          <p class='howItWorksText'>
+            <!--make of 45-65 characters (including spaces) on each line -->
+            Cold weather running can be difficult. One look at the <br>
+            temperature and your motivation to run can be instantly <br>
+            dissolved. This application’s goal is to help you stay <br>
+            motivated. By allowing Google’s Geolocation software to <br>
+            determine your location, this software will let you know <br>
+            immediately what gear to wear on your workout. All without <br>
+            having to view the temperature! Enough knowledge to get <br>
+            you running without being discouraged by the temperature. <br>
+          </p>
+        </div>
+      </div>
+
+      <div class='row' id='line'>
+        <div class='col-md-12'></div>
+      </div>
+
+      <div class="row">
+        <div class='col-md-12'>
+          <h2 class='gearRecommendations'>Gear recommendations</h2>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-md-12'>
+          <div id="results"></div>
+        </div>
+      </div>
+
+      <div class='row' id='line'>
+        <div class='col-md-12'></div>
+      </div>
+
+      <div class='row' id='followMe'>
+        <div class='col-md-12'>
+          <h3>follow me</h3>
+          <a href='https://twitter.com/Kuhnhohn' target='_blank'><img class='icon' src='http://icons.iconarchive.com/icons/limav/flat-gradient-social/512/Twitter-icon.png'></a>
+          <a href='https://github.com/lkhohn' target='_blank'><img class='icon' src='http://cdn.flaticon.com/png/256/25231.png'></a>
+        </div>
+      </div>
+
     </div>
 
+    <script>
+    var url = "http://svcs.ebay.com/services/search/FindingService/v1";
+     url += "?OPERATION-NAME=findItemsAdvanced";
+     url += "&SERVICE-VERSION=1.0.0";
+     url += "&SECURITY-APPNAME=Galvaniz-fb1a-4804-b9f3-f5a4557d9ac8";
+     url += "&GLOBAL-ID=EBAY-US";
+     url += "&RESPONSE-DATA-FORMAT=JSON";
+     url += "&callback=_cb_findItemsAdvanced";
+     url += "&REST-PAYLOAD";
+     url += "&GetMultipleItems=TRUE";
+     url += "&categoryId=11450"; //clothing
+     url += "&categoryId=888"; // sports gear
+     url += "&keywords=%22cold+weather+running%22";
+     url += "&HideDuplicateItems=TRUE";
+     url += "&paginationInput.entriesPerPage=100";
+     url += "&paginationInput.pageNumber=1";
+     url += "&paginationOutput.totalEntries=20";
 
-  <div class='row' id='line'>
-    <div class='col-md-12'>
-    </div>
-  </div>
+    function _cb_findItemsAdvanced(root){
+      var items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
+      var itemsRandom = items[Math.floor(Math.random()*items.length)];
+      var html = [];
+      html.push('<table width="80%" border="0" cellspacing="0" cellpadding="3"><tbody>');
 
-  <div class='row' id='followMe'>
-    <div class='col-md-12'>
-      <h3>follow me</h3>
-      <a href='https://twitter.com/Kuhnhohn' target='_blank'><img class='icon' src='http://icons.iconarchive.com/icons/limav/flat-gradient-social/512/Twitter-icon.png'></a>
-      <a href='https://github.com/lkhohn' target='_blank'><img class='icon' src='http://cdn.flaticon.com/png/256/25231.png'></a>
-    </div>
-  </div>
+        var item     = itemsRandom;
+        var title    = item.title;
+        var pic      = item.galleryURL;
+        var viewitem = item.viewItemURL;
 
+        if (null != title && null != viewitem){
+          html.push('<tr><td>' + '<img src="' + pic + '" border="0">' + '</td>' +
+            '<td><a href="' + viewitem + '" target="_blank">' + title + '</a></td></tr>');
+          }
+      html.push('</tbody></table>');
+      document.getElementById("results").innerHTML = html.join("");
+    }
+    //Submit the request
+     s=document.createElement('script'); // create script element
+     s.src= url
+     document.body.appendChild(s);
+    </script>
 
-</div>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src='practice.js'></script>
 
-<script>
-var url = "http://svcs.ebay.com/services/search/FindingService/v1";
- url += "?OPERATION-NAME=findItemsAdvanced";
- url += "&SERVICE-VERSION=1.0.0";
- url += "&SECURITY-APPNAME=Galvaniz-fb1a-4804-b9f3-f5a4557d9ac8";
- url += "&GLOBAL-ID=EBAY-US";
- url += "&RESPONSE-DATA-FORMAT=JSON";
- url += "&callback=_cb_findItemsAdvanced";
- url += "&REST-PAYLOAD";
- url += "&GetMultipleItems=TRUE";
- url += "&categoryId=11450"; //clothing
- url += "&categoryId=888"; // sports gear
- url += "&keywords=%22cold+weather+running%22";
- url += "&HideDuplicateItems=TRUE";
- url += "&paginationInput.entriesPerPage=100";
- // url += "&paginationOutput.pageNumber=1";
- url += "&paginationInput.pageNumber=1";
- url += "&paginationOutput.totalEntries=20";
-
-function _cb_findItemsAdvanced(root){
-  var items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
-  var itemsRandom = items[Math.floor(Math.random()*items.length)];
-  var html = [];
-  html.push('<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody>');
-
-    var item     = itemsRandom;
-    var title    = item.title;
-    var pic      = item.galleryURL;
-    var viewitem = item.viewItemURL;
-
-    if (null != title && null != viewitem){
-      html.push('<tr><td>' + '<img src="' + pic + '" border="0">' + '</td>' +
-        '<td><a href="' + viewitem + '" target="_blank">' + title + '</a></td></tr>');
-      }
-  html.push('</tbody></table>');
-  document.getElementById("results").innerHTML = html.join("");
-}
-//Submit the request
- s=document.createElement('script'); // create script element
- s.src= url
- document.body.appendChild(s);
-</script>
-
-
-
-  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-  <script type="text/javascript" src='practice.js'></script>
-
-
-</body>
-
+  </body>
 </html>

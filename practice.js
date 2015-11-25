@@ -1,11 +1,3 @@
-// zipcodeAPI key
-// js-Q7YvTzD1xCqPIsNTh4QTV4lKHk8NHoyxww3p6HqDjRt2jgVBlLvhQQ2xaalSyUq4
-
-// google maps API SERVER
-// AIzaSyBwKaJeGg_n8IB1jeaGnvrQNEqe2d94iVQ
-// https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBwKaJeGg_n8IB1jeaGnvrQNEqe2d94iVQ
-
-
 var dayOne = new Date();
 var day = dayOne.getDate();
 var month = dayOne.getMonth() + 1;
@@ -23,33 +15,12 @@ $('#howItWorksButton').on('click', function(event) {
      }, 300);
 });
 
-// var above30 = document.getElementsByClassName('above30')[0];
-// above30.style.display = 'none';
-// var between20and30 = document.getElementsByClassName('between20and30')[0];
-// between20and30.style.display = 'none';
-// var between10and20 = document.getElementsByClassName('between10and20')[0];
-// between10and20.style.display = 'none';
-// var between0and10 = document.getElementsByClassName('between0and10')[0];
-// between0and10.style.display = 'none';
-// var between0andneg20 = document.getElementsByClassName('between0andneg20')[0];
-// between0andneg20.style.display = 'none';
-// var below20 = document.getElementsByClassName('below20')[0];
-// below20.style.display = 'none';
-
 var cityInput = document.querySelector('#cityInput');
 var stateInput = document.querySelector('#stateInput');
 var button = document.querySelector('#button');
 
 button.addEventListener('click', function(event){
   event.preventDefault();
-
-
-  // $('#clothingRecDayOne').empty();
-  // $('#clothingRecDayTwo').empty();
-  // $('#clothingRecDayThree').empty();
-  // $('.weatherImgSection').empty();
-
-
 
   $.ajax({
     url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBwKaJeGg_n8IB1jeaGnvrQNEqe2d94iVQ',
@@ -71,28 +42,28 @@ button.addEventListener('click', function(event){
           function dayOne (input) {
             var far = (input - 273.25) * 1.800 + 32.00;
               if(far >= 30){
-                  $('#clothingRecDayOne').text('1 top, 1 bottom. long sleeve + tights');
-                  $('#clothingRecDayOne').css('background', 'url("http://www.galjaja.com/wp-content/uploads/2014/05/30/2/955-Nike-Dri-FIT-Knit-Long-Sleeve-Half-Zip-Running-Shirt-for-Women-4.jpg")');
+                  $('#dayOneText').text('1 top, 1 bottom. long sleeve + tights');
+                  $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/BzeqXbK.jpg")');
                   }
                 else if (far >= 20 && far < 30){
                    $('#clothingRecDayOne').text('2 tops, 1 bottom. long sleeve + vest + tights');
-                   $('#clothingRecDayOne').css('background', 'url("https://s-media-cache-ak0.pinimg.com/236x/b7/c4/67/b7c467d50b86a2bf5bf910f02170897a.jpg")');
+                   $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/Aunu7Bo.jpg")');
                   }
                 else if(far >= 10 && far < 20){
                   $('#clothingRecDayOne').text('2 tops, 2 bottoms. base layer + jacket + tights + pants');
-                  $('#clothingRecDayOne').css('background', 'url("https://s-media-cache-ak0.pinimg.com/236x/29/a4/d0/29a4d0c9c193879327b22ff341382743.jpg")');
+                  $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/ukdsMkS.jpg")');
                   }
                 else if(far >= 0 && far < 10){
                   $('#clothingRecDayOne').text('3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants');
-                  $('#clothingRecDayOne').css('background', 'url("http://www.nycrunningmama.com/wp-content/uploads/2015/02/photo-99.jpg")');
+                  $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/kXyPsex.jpg")');
                   }
                  else if(far <= -1 && far >= -20){
                    $('#clothingRecDayOne').text('3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask');
-                   $('#clothingRecDayOne').css('background', 'url("http://cdn.gearpatrol.com/wp-content/uploads/2015/11/layers-to-run-gear-patrol-6.jpg")');
+                   $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/SLEVJHE.jpg")');
                   }
                  else if(far <=-21){
                     $('#clothingRecDayOne').text('do not run');
-                    $('#clothingRecDayOne').css('background', 'url("http://static.vibe.com/uploads/2014/01/VIBE-Vixen-Cold-Weather-Meme51.png")');
+                    $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/0xCPN66.png")');
                   }
                 }
               dayOne(dayOneKelvin);
@@ -102,27 +73,27 @@ button.addEventListener('click', function(event){
             var far = (input - 273.25) * 1.800 + 32.00;
                 if(far >= 30){
                   $('#clothingRecDayTwo').text('1 top, 1 bottom. long sleeve + tights');
-                  $('#clothingRecDayTwo').css('background', 'url("http://www.galjaja.com/wp-content/uploads/2014/05/30/2/955-Nike-Dri-FIT-Knit-Long-Sleeve-Half-Zip-Running-Shirt-for-Women-4.jpg")');
+                  $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/BzeqXbK.jpg")');
                   }
                 else if (far >= 20 && far < 30){
                   $('#clothingRecDayTwo').text('2 tops, 1 bottom. long sleeve + vest + tights');
-                  $('#clothingRecDayTwo').css('background', 'url("https://s-media-cache-ak0.pinimg.com/236x/b7/c4/67/b7c467d50b86a2bf5bf910f02170897a.jpg")');
+                  $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/Aunu7Bo.jpg")');
                   }
                 else if(far >= 10 && far < 20){
                   $('#clothingRecDayTwo').text('2 tops, 2 bottoms. base layer + jacket + tights + pants');
-                  $('#clothingRecDayTwo').css('background', 'url("https://s-media-cache-ak0.pinimg.com/236x/29/a4/d0/29a4d0c9c193879327b22ff341382743.jpg")');
+                  $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/ukdsMkS.jpg")');
                   }
                 else if(far >= 0 && far < 10){
                   $('#clothingRecDayTwo').text('3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants');
-                  $('#clothingRecDayTwo').css('background', 'url("http://www.nycrunningmama.com/wp-content/uploads/2015/02/photo-99.jpg")');
+                  $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/kXyPsex.jpg")');
                   }
                  else if(far <= -1 && far >= -20){
                    $('#clothingRecDayTwo').text('3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask');
-                   $('#clothingRecDayTwo').css('background', 'url("http://cdn.gearpatrol.com/wp-content/uploads/2015/11/layers-to-run-gear-patrol-6.jpg")');
+                   $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/SLEVJHE.jpg")');
                   }
                  else if(far <=-21){
                    $('#clothingRecDayTwo').text('do not run');
-                    $('#clothingRecDayTwo').css('background', 'url("http://static.vibe.com/uploads/2014/01/VIBE-Vixen-Cold-Weather-Meme51.png")');
+                    $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/0xCPN66.png")');
                   }
                 }
                 dayTwo(dayTwoKelvin);
@@ -131,27 +102,27 @@ button.addEventListener('click', function(event){
                   var far = (input - 273.25) * 1.800 + 32.00;
                   if(far >= 30){
                     $('#clothingRecDayThree').text('1 top, 1 bottom. long sleeve + tights');
-                    $('#clothingRecDayThree').css('background', 'url("http://www.galjaja.com/wp-content/uploads/2014/05/30/2/955-Nike-Dri-FIT-Knit-Long-Sleeve-Half-Zip-Running-Shirt-for-Women-4.jpg")');
+                    $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/BzeqXbK.jpg")');
                     }
                   else if (far >= 20 && far < 30){
                     $('#clothingRecDayThree').text('2 top, 1 bottom. long sleeve + vest + tights');
-                    $('#clothingRecDayThree').css('background', 'url("https://s-media-cache-ak0.pinimg.com/236x/b7/c4/67/b7c467d50b86a2bf5bf910f02170897a.jpg")');
+                    $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/Aunu7Bo.jpg")');
                     }
                   else if(far >= 10 && far < 20){
                     $('#clothingRecDayThree').text('2 tops, 2 bottoms. base layer + jacket + tights + pants');
-                    $('#clothingRecDayThree').css('background', 'url("https://s-media-cache-ak0.pinimg.com/236x/29/a4/d0/29a4d0c9c193879327b22ff341382743.jpg")');
+                    $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/ukdsMkS.jpg")');
                     }
                   else if(far >= 0 && far < 10){
                     $('#clothingRecDayThree').text('3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants');
-                    $('#clothingRecDayThree').css('background', 'url("http://www.nycrunningmama.com/wp-content/uploads/2015/02/photo-99.jpg")');
+                    $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/kXyPsex.jpg")');
                     }
                    else if(far <= -1 && far >= -20){
                      $('#clothingRecDayThree').text('3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask');
-                     $('#clothingRecDayThree').css('background', 'url("http://cdn.gearpatrol.com/wp-content/uploads/2015/11/layers-to-run-gear-patrol-6.jpg")');
+                     $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/SLEVJHE.jpg")');
                     }
                    else if(far <=-21){
                      $('#clothingRecDayThree').text('do not run');
-                     $('#clothingRecDayThree').css('background', 'url("http://static.vibe.com/uploads/2014/01/VIBE-Vixen-Cold-Weather-Meme51.png")');
+                     $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/0xCPN66.png")');
                     }
                   }
                   dayThree(dayThreeKelvin);
@@ -203,65 +174,65 @@ button.addEventListener('click', function(event){
 
 
 // TESTING SECTION
-    $.ajax({
-      url: '/temp.json',
-      method: "GET",
-      success: function(data) {
-        var cityData = JSON.stringify(data);
-        var dataObject = JSON.parse(cityData);
-        function testClothing(input){
-        if(input === dataObject.CityOne){
-            $('#clothingRecDayOne').text('1 top, 1 bottom. long sleeve + tights');
-            $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/BzeqXbK.jpg")');
-            $('#clothingRecDayTwo').text('1 top, 1 bottom. long sleeve + tights');
-            $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/BzeqXbK.jpg")');
-            $('#clothingRecDayThree').text('1 top, 1 bottom. long sleeve + tights');
-            $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/BzeqXbK.jpg")');
-            }
-        else if(input === dataObject.CityTwo){
-          $('#clothingRecDayOne').text('2 top, 1 bottom. long sleeve + vest + tights');
-          $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/Aunu7Bo.jpg")');
-          $('#clothingRecDayTwo').text('2 top, 1 bottom. long sleeve + vest + tights');
-          $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/Aunu7Bo.jpg")');
-          $('#clothingRecDayThree').text('2 top, 1 bottom. long sleeve + vest + tights');
-          $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/Aunu7Bo.jpg")');
-          }
-        else if(input === dataObject.CityThree){
-          $('#clothingRecDayOne').text('2 tops, 2 bottoms. base layer + jacket + tights + pants');
-          $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/ukdsMkS.jpg")');
-          $('#clothingRecDayTwo').text('2 tops, 2 bottoms. base layer + jacket + tights + pants');
-          $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/ukdsMkS.jpg")');
-          $('#clothingRecDayThree').text('2 tops, 2 bottoms. base layer + jacket + tights + pants');
-          $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/ukdsMkS.jpg")');
-          }
-        else if(input === dataObject.CityFour){
-          $('#clothingRecDayOne').text('3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants');
-          $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/kXyPsex.jpg")');
-          $('#clothingRecDayTwo').text('3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants');
-          $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/kXyPsex.jpg")');
-          $('#clothingRecDayThree').text('3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants');
-          $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/kXyPsex.jpg")');
-          }
-        else if(input === dataObject.CityFive){
-          $('#clothingRecDayOne').text('3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask');
-          $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/SLEVJHE.jpg")');
-          $('#clothingRecDayTwo').text('3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask');
-          $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/SLEVJHE.jpg")');
-          $('#clothingRecDayThree').text('3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask');
-          $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/SLEVJHE.jpg")');
-          }
-        else if(input === dataObject.CitySix){
-          $('#clothingRecDayOne').text('do not run');
-          $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/0xCPN66.png")');
-          $('#clothingRecDayTwo').text('do not run');
-          $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/0xCPN66.png")');
-          $('#clothingRecDayThree').text('do not run');
-          $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/0xCPN66.png")');
-      }
-        }
-        testClothing(35);
-      }
-});
+//     $.ajax({
+//       url: '/temp.json',
+//       method: "GET",
+//       success: function(data) {
+//         var cityData = JSON.stringify(data);
+//         var dataObject = JSON.parse(cityData);
+//         function testClothing(input){
+//         if(input === dataObject.CityOne){
+//             $('#clothingRecDayOne').text('1 top, 1 bottom. long sleeve + tights');
+//             $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/BzeqXbK.jpg")');
+//             $('#clothingRecDayTwo').text('1 top, 1 bottom. long sleeve + tights');
+//             $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/BzeqXbK.jpg")');
+//             $('#clothingRecDayThree').text('1 top, 1 bottom. long sleeve + tights');
+//             $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/BzeqXbK.jpg")');
+//             }
+//         else if(input === dataObject.CityTwo){
+//           $('#clothingRecDayOne').text('2 top, 1 bottom. long sleeve + vest + tights');
+//           $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/Aunu7Bo.jpg")');
+//           $('#clothingRecDayTwo').text('2 top, 1 bottom. long sleeve + vest + tights');
+//           $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/Aunu7Bo.jpg")');
+//           $('#clothingRecDayThree').text('2 top, 1 bottom. long sleeve + vest + tights');
+//           $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/Aunu7Bo.jpg")');
+//           }
+//         else if(input === dataObject.CityThree){
+//           $('#clothingRecDayOne').text('2 tops, 2 bottoms. base layer + jacket + tights + pants');
+//           $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/ukdsMkS.jpg")');
+//           $('#clothingRecDayTwo').text('2 tops, 2 bottoms. base layer + jacket + tights + pants');
+//           $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/ukdsMkS.jpg")');
+//           $('#clothingRecDayThree').text('2 tops, 2 bottoms. base layer + jacket + tights + pants');
+//           $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/ukdsMkS.jpg")');
+//           }
+//         else if(input === dataObject.CityFour){
+//           $('#clothingRecDayOne').text('3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants');
+//           $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/kXyPsex.jpg")');
+//           $('#clothingRecDayTwo').text('3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants');
+//           $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/kXyPsex.jpg")');
+//           $('#clothingRecDayThree').text('3 tops, 2 bottoms. base layer + fleece + jacket + tights + pants');
+//           $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/kXyPsex.jpg")');
+//           }
+//         else if(input === dataObject.CityFive){
+//           $('#clothingRecDayOne').text('3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask');
+//           $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/SLEVJHE.jpg")');
+//           $('#clothingRecDayTwo').text('3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask');
+//           $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/SLEVJHE.jpg")');
+//           $('#clothingRecDayThree').text('3 tops, 3 bottoms. base layer + fleece + jacket + tights + pants + 2 pairs mittens + facemask');
+//           $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/SLEVJHE.jpg")');
+//           }
+//         else if(input === dataObject.CitySix){
+//           $('#clothingRecDayOne').text('do not run');
+//           $('#clothingRecDayOne').css('background', 'url("http://i.imgur.com/0xCPN66.png")');
+//           $('#clothingRecDayTwo').text('do not run');
+//           $('#clothingRecDayTwo').css('background', 'url("http://i.imgur.com/0xCPN66.png")');
+//           $('#clothingRecDayThree').text('do not run');
+//           $('#clothingRecDayThree').css('background', 'url("http://i.imgur.com/0xCPN66.png")');
+//       }
+//         }
+//         testClothing(35);
+//       }
+// });
 // TESTING SECTION
 //     $.ajax({
 //       url: '/test.json',
