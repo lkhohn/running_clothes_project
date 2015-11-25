@@ -10,7 +10,8 @@
   height:3em;
   font-family: 'Raleway', sans-serif;
 }
-.weatherImgSection{
+
+.weatherImgSection {
   height: 30em;
   width:100%;
 }
@@ -29,11 +30,20 @@
   font-family: 'Raleway', sans-serif;
 }
 
-#clothingRecDayOne, #clothingRecDayTwo, #clothingRecDayThree  {
+#clothingRecTitleDayOne, #clothingRecTitleDayTwo, #clothingRecTitleDayThree {
   margin-top:4em;
-  height:40em;
+  text-align: center;
+}
+
+#clothingRecDayOne, #clothingRecDayTwo, #clothingRecDayThree  {
+  margin-top:2em;
   text-align: center;
   font-weight:bold;
+}
+
+#clothingRecPicDayOne, #clothingRecPicDayTwo, #clothingRecPicDayThree {
+  margin-top:2em;
+  height:40em;
 }
 
 #line {
@@ -45,19 +55,24 @@
   background-color: black;
 }
 
+#results {
+  padding-left:20em;
+  padding-top:2em;
+}
+
 .howItWorksTitle, .howItWorksText, .gearRecommendations {
   text-align:center;
 }
 
 .howItWorksTitle, .gearRecommendations {
   font-family: 'Raleway', sans-serif;
+  padding-top:1em;
 }
 
 .howItWorksText {
   font-family: 'Open Sans', sans-serif;
   font-size:18px;
 }
-
 
 #followMe {
   text-align:center;
