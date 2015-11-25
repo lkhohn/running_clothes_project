@@ -18,6 +18,23 @@ $('#howItWorksButton').on('click', function(event) {
 var $cityInput = $('#cityInput');
 var $stateInput = $('#stateInput');
 var $button = $('#button');
+var $buttonInput = $('#buttonInput');
+
+
+buttonInput.addEventListener('click', function(event) {
+  event.preventDefault();
+$.ajax({
+     url: 'http://api.openweathermap.org/data/2.5/weather?q='+cityInput.value+',840&APPID=d6cf401d582e33e634bca26a32b22f60',
+     method: "GET",
+     success: function(data) {
+       var weatherData = JSON.stringify(data);
+       var weatherObject = JSON.parse(weatherData);
+     }
+   });
+ });
+
+
+
 
 button.addEventListener('click', function(event) {
   event.preventDefault();
