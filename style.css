@@ -30,20 +30,23 @@
   font-family: 'Raleway', sans-serif;
 }
 
-#clothingRecTitleDayOne, #clothingRecTitleDayTwo, #clothingRecTitleDayThree {
+#clothingRecDate{
   margin-top:4em;
-  text-align: center;
 }
 
-#clothingRecDayOne, #clothingRecDayTwo, #clothingRecDayThree  {
+#clothingRecTitle {
   margin-top:2em;
-  text-align: center;
   font-weight:bold;
+}
+
+
+#clothingRecDate, #clothingRecTitle, #clothingRecPic {
+  margin-left:6em;
 }
 
 #clothingRecPicDayOne, #clothingRecPicDayTwo, #clothingRecPicDayThree {
   margin-top:2em;
-  height:40em;
+  height:25em;
 }
 
 #line {
