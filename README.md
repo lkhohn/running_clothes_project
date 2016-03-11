@@ -15,5 +15,12 @@ Geolocation API to determine their location. Based on this result, weather condi
 recommendations are displayed based on the 3-day forecast. Additionally, the header image is changed to reflect the 
 current weather conditions. Lastly, there are gear suggestions for cold weather workouts.
 
+Live site:
 https://cold-run.firebaseapp.com/
+
+Check out the screencast:
 https://www.youtube.com/watch?v=VJ7CXqdEfcI
+
+![home page](https://i.imgur.com/GClcs8X.png)
+
+![gear recommendations](https://i.imgur.com/VTzt5zu.png)
